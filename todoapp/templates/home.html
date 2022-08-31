@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="stickyFooter">
+    <!-- Content -->
+    <div class="row">
+        <div class="col-lg-8">
+            <h2 class="pull-left">My ToDo List</h2>
+        </div>
+        
+        <div class="row">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control fw-50 pull-left" id="newToDo" name="newToDo" placeholder="Title..." aria-label="title" aria-describedby="basic-addon2">
+                <div class="invalid-feedback">This can not be empty!</div>
+              </div>
+
+              <div class="input-group-append">
+                <button class="btn-lg btn-default add-button" onClick="add()" type="button">Add</button>
+              </div>
+            
+            <ul id="todolist"></ul>
+        </div>
+    </div>
+    <!--End: Content-->
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Todo</h4>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control fw-20 pull-left updateToDo" name="updateToDo" placeholder="Title..." aria-label="title" aria-describedby="basic-addon2" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" onclick="edit()" data-dismiss="modal">Update</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ToDo App</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="title" content="ToDo App" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <meta property="og:title" content="ToDo App" />
+    <meta property="og:site_name" content="ToDo App" />
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <link rel="icon" type="image/x-icon" href="https://novascotia.ca/clf/ignition/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="https://novascotia.ca/clf/ignition/shortcut.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" media="all" href="{% static 'lib/jqueryui/jquery-ui.min.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'lib/fontawesome/css/all.min.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'lib/bootstrap/dist/css/bootstrap-grid.min.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/saltire.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/supplimentary-page-styles.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/global-form-styles.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/radio-button.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/toggle.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/checkboxes.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/slider.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/input-field-group.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/select.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/buttons.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/phase-banner.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/accordion.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/panel.css' %}" />
+	<link rel="stylesheet" media="all" href="{% static 'css/date-picker.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/data-list.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/todoapp.css' %}" />
+</head>
+
+<body>
+    <div class="Site js-enabled" id="container">
+        <!-- Header -->
+        <header id="navigation" class="ribbon" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="https://novascotia.ca/" hreflang="en"><img class="ribbon-img" src="https://novascotia.ca/clf/ignition/img/nsvip-en-white-flag.svg" alt="Government of Nova Scotia" /></a>
+                    </div>
+                    <div class="col-xs-6">
+                        {% if request.path not in '/home/' %}
+                            <a href="{% url 'todoapp:home' %}" class="navbar-button">Dashboard</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </header>	
+        <!-- End: Header -->
+
+        <div class="container Site-content">
+            <!-- Main -->
+            <main class="main published" id="main">
+                <article>       
+                    {% block content %}
+                    <!-- Page content -->
+                    {% endblock %}
+                </article>
+            </main>
+            <!-- End: Main -->
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <div class="container">
+                <ul class="footer-statement-links">
+                    <li><a href="https://beta.novascotia.ca/privacy/" hreflang="en">Privacy</a></li>
+                    <li><a href="https://beta.novascotia.ca/terms/" hreflang="en">Terms</a></li>
+                </ul>
+                <div aria-label="copyright" class="copyright">
+                    <small><a href="https://beta.novascotia.ca/copyright/" hreflang="en">Crown copyright &#xA9; Government of Nova Scotia</a></small>
+                </div>
+            </div>
+        </footer>
+        <!-- End: Footer -->
+
+        <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'lib/jqueryui/jquery-ui.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{% static 'js/todoapp.js' %}"></script>
+    </div>
+</body>
+</html>

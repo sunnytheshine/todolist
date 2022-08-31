@@ -1,0 +1,9 @@
+asgiref==3.2.10
+Django==3.1
+django-clearcache==1.2.1
+django-environ==0.4.5
+djangorestframework==3.13.1
+mysqlclient==2.1.1
+pytz==2022.2.1
+sqlparse==0.4.2
+whitenoise==6.2.0
