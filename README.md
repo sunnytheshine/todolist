@@ -24,3 +24,6 @@ Install python3 and pip on laptop
 - python manage.py migrate
 - python manage.py runserver
 - Access the app at **http://localhost:8000/**
+
+
+![Screen Shot 2022-08-31 at 1 36 18 PM](https://user-images.githubusercontent.com/17788853/187732025-19495335-a685-418a-8250-f4649a71513b.png)
