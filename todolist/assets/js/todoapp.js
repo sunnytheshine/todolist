@@ -97,6 +97,8 @@ add = () => {
     document.getElementsByClassName('invalid-feedback')[0].style.display= 'block';
     return;
   }
+
+  document.getElementsByClassName('invalid-feedback')[0].style.display= 'none';
   const payload = {
     title: input.value
   };

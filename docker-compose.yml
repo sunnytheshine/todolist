@@ -1,25 +1,21 @@
-version: '3'
+version: "3"
 services:
-  db:
-    image: mysql:8
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_DATABASE='todo'
-      - MYSQL_USER='root'
-      - MYSQL_PASSWORD='k1ngk0ng'
-      - MYSQL_ROOT_PASSWORD='k1ngk0ng'
-      - MYSQL_HOST=''
-    volumes:
-      - /tmp/app/mysqld:/var/run/mysqld
-      - ./db:/var/lib/mysql
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    entrypoint: ["./wait.sh"]
     ports:
       - "8000:8000"
+
+  db:
+    image: mysql/mysql-server:8.0.23
+    ports:
+      - "127.0.0.1:3300:3300"
+    environment:
+      MYSQL_DATABASE: todo
+      MYSQL_ROOT_HOST: "127.0.0.1"
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: k1ngk0ng
     volumes:
-      - .:/app
-      - /tmp/app/mysqld:/run/mysqld
-    depends_on:
-      - db
+      - ./db:/docker-entrypoint-initdb.d/:ro
