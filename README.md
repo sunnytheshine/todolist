@@ -1,2 +1,1 @@
-# todolist
-Simple Django Rest Api based todo app
+# Django Rest Api based Simple Todo App
