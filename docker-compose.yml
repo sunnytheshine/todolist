@@ -11,10 +11,9 @@ services:
   db:
     image: mysql/mysql-server:8.0.23
     ports:
-      - "127.0.0.1:3300:3300"
+      - "127.0.0.1:3306:3306"
     environment:
       MYSQL_DATABASE: todo
-      MYSQL_ROOT_HOST: "127.0.0.1"
       MYSQL_USER: "root"
       MYSQL_ROOT_PASSWORD: k1ngk0ng
     volumes:
